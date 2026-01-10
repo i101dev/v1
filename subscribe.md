@@ -26,7 +26,7 @@ Stay informed. Get early access updates, development news, and launch notificati
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  const API_URL = 'https://api.yourdomain.com/subscribe'
+  const API_URL = 'https://api.syndicateprotocol.app/subscribe'
 
   const form = document.getElementById('subscribe-form')
   const input = document.getElementById('email-input')
