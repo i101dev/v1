@@ -1,0 +1,14 @@
+{
+  "name": "syndicate-protocol-wiki",
+  "version": "1.0.0",
+  "description": "Syndicate Protocol game wiki and documentation",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  }
+}

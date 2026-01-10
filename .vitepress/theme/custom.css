@@ -1,0 +1,727 @@
+/* ========================================================================
+   VITEPRESS WIKI - TERMINAL AESTHETIC
+   Following RegionDashboard design principles
+   ======================================================================== */
+
+:root {
+  --vp-c-brand-1: #ff6b35;
+  --vp-c-brand-2: #ff8c5a;
+  --vp-c-brand-3: #ffb347;
+  --vp-c-brand-soft: rgba(255, 107, 53, 0.14);
+
+  --vp-home-hero-name-color: #ff6b35;
+  --vp-home-hero-name-background: none;
+
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+
+  --vp-font-family-base: "Courier New", Consolas, Monaco, monospace;
+  --vp-font-family-mono: "Courier New", Consolas, Monaco, monospace;
+}
+
+
+/* ===== DARK MODE - PRIMARY THEME ===== */
+
+.dark {
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-soft: rgba(0, 0, 0, 0.2);
+  --vp-c-bg-mute: #1a1a1a;
+  --vp-c-bg-alt: #0f0f0f;
+
+  --vp-c-divider: #333;
+  --vp-c-gutter: #1a1a1a;
+
+  --vp-c-text-1: #e0e0e0;
+  --vp-c-text-2: #c0c0c0;
+  --vp-c-text-3: #888;
+
+  --vp-c-border: #333;
+
+  --vp-c-default-1: #333;
+  --vp-c-default-2: #2a2a2a;
+  --vp-c-default-3: #222;
+  --vp-c-default-soft: rgba(255, 255, 255, 0.04);
+
+  --vp-c-tip-1: #ff6b35;
+  --vp-c-tip-2: rgba(255, 107, 53, 0.16);
+  --vp-c-tip-3: rgba(255, 107, 53, 0.32);
+  --vp-c-tip-soft: rgba(255, 107, 53, 0.08);
+
+  --vp-c-warning-1: #ffb347;
+  --vp-c-warning-2: rgba(255, 179, 71, 0.16);
+  --vp-c-warning-3: rgba(255, 179, 71, 0.32);
+  --vp-c-warning-soft: rgba(255, 179, 71, 0.08);
+
+  --vp-c-danger-1: #dc3545;
+  --vp-c-danger-2: rgba(220, 53, 69, 0.16);
+  --vp-c-danger-3: rgba(220, 53, 69, 0.32);
+  --vp-c-danger-soft: rgba(220, 53, 69, 0.08);
+
+  --vp-button-brand-bg: rgba(255, 107, 53, 0.15);
+  --vp-button-brand-border: rgba(255, 107, 53, 0.3);
+  --vp-button-brand-text: #ff6b35;
+  --vp-button-brand-hover-bg: rgba(255, 107, 53, 0.25);
+  --vp-button-brand-hover-border: #ff6b35;
+  --vp-button-brand-hover-text: #ff6b35;
+  --vp-button-brand-active-bg: rgba(255, 107, 53, 0.3);
+  --vp-button-brand-active-border: #ff6b35;
+  --vp-button-brand-active-text: #ff6b35;
+
+  --vp-button-alt-bg: rgba(0, 0, 0, 0.3);
+  --vp-button-alt-border: #333;
+  --vp-button-alt-text: #e0e0e0;
+  --vp-button-alt-hover-bg: rgba(0, 0, 0, 0.4);
+  --vp-button-alt-hover-border: #555;
+  --vp-button-alt-hover-text: #fff;
+
+  --vp-sidebar-bg-color: rgba(0, 0, 0, 0.2);
+
+  --vp-code-block-bg: rgba(0, 0, 0, 0.3);
+  --vp-code-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+/* ===== LIGHT MODE ===== */
+
+:root:not(.dark) {
+  --vp-c-bg: #f8fafc;
+  --vp-c-bg-soft: rgba(241, 245, 249, 0.8);
+  --vp-c-bg-mute: #f1f5f9;
+  --vp-c-bg-alt: #e2e8f0;
+
+  --vp-c-divider: #cbd5e1;
+  --vp-c-gutter: #e2e8f0;
+
+  --vp-c-text-1: #1e293b;
+  --vp-c-text-2: #475569;
+  --vp-c-text-3: #64748b;
+
+  --vp-c-border: #cbd5e1;
+
+  --vp-c-brand-1: #0e7490;
+  --vp-c-brand-2: #0891b2;
+  --vp-c-brand-3: #06b6d4;
+  --vp-c-brand-soft: rgba(14, 116, 144, 0.1);
+
+  --vp-home-hero-name-color: #0e7490;
+
+  --vp-button-brand-bg: rgba(14, 116, 144, 0.1);
+  --vp-button-brand-border: rgba(14, 116, 144, 0.3);
+  --vp-button-brand-text: #0e7490;
+  --vp-button-brand-hover-bg: rgba(14, 116, 144, 0.2);
+  --vp-button-brand-hover-border: #0e7490;
+  --vp-button-brand-hover-text: #0e7490;
+
+  --vp-button-alt-bg: rgba(241, 245, 249, 0.8);
+  --vp-button-alt-border: #cbd5e1;
+  --vp-button-alt-text: #1e293b;
+  --vp-button-alt-hover-bg: #e2e8f0;
+  --vp-button-alt-hover-border: #94a3b8;
+
+  --vp-sidebar-bg-color: rgba(241, 245, 249, 0.9);
+
+  --vp-code-block-bg: rgba(241, 245, 249, 0.8);
+  --vp-code-bg: rgba(241, 245, 249, 0.8);
+}
+
+
+/* ========================================================================
+   TYPOGRAPHY - TERMINAL MONOSPACE
+   ======================================================================== */
+
+body {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.VPDoc h1,
+.VPDoc h2,
+.VPDoc h3,
+.VPDoc h4,
+.VPDoc h5,
+.VPDoc h6 {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.VPDoc h1::before,
+.VPDoc h2::before {
+  content: "> ";
+  color: var(--vp-c-brand-1);
+  opacity: 0.5;
+}
+
+
+/* ========================================================================
+   NAVBAR - TERMINAL HEADER
+   ======================================================================== */
+
+.VPNav {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
+.dark .VPNavBar {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.VPNavBarTitle .title {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPNavBarTitle .title::before {
+  content: "> ";
+  opacity: 0.5;
+}
+
+.VPNavBarMenuLink {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* ========================================================================
+   SIDEBAR - TERMINAL NAVIGATION
+   ======================================================================== */
+
+.VPSidebar {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
+}
+
+.dark .VPSidebar {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.VPSidebarItem .text {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700;
+}
+
+.VPSidebarItem.level-0 > .item > .text::before {
+  content: "> ";
+  opacity: 0.5;
+}
+
+.VPSidebarItem.is-active > .item > .text {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPSidebarItem .link {
+  padding: 6px 12px !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease;
+}
+
+.VPSidebarItem .link:hover {
+  background: rgba(255, 107, 53, 0.08) !important;
+}
+
+.VPSidebarItem.is-active .link {
+  background: rgba(255, 107, 53, 0.15) !important;
+  border-left: 3px solid var(--vp-c-brand-1) !important;
+}
+
+
+/* ========================================================================
+   HERO SECTION
+   ======================================================================== */
+
+.VPHero .name {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: var(--vp-c-brand-1) !important;
+}
+
+.VPHero .tagline {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 1.1rem !important;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.VPHero .text {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 13px !important;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+
+
+/* ========================================================================
+   BUTTONS - TERMINAL STYLE
+   ======================================================================== */
+
+.VPButton {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 0 !important;
+  transition: all 0.2s ease;
+}
+
+.VPButton.brand {
+  background: rgba(255, 107, 53, 0.15) !important;
+  border: 1px solid rgba(255, 107, 53, 0.3) !important;
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPButton.brand:hover {
+  background: rgba(255, 107, 53, 0.25) !important;
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+.VPButton.alt {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPButton.alt:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: #555 !important;
+}
+
+
+/* ========================================================================
+   FEATURE CARDS - TERMINAL BLOCKS
+   ======================================================================== */
+
+.VPFeature {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.VPFeature:hover {
+  background: rgba(255, 107, 53, 0.05) !important;
+  border-color: rgba(255, 107, 53, 0.3) !important;
+  transform: none;
+}
+
+.VPFeature .title {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPFeature .details {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 12px !important;
+  line-height: 1.5;
+  color: var(--vp-c-text-2) !important;
+}
+
+.VPFeature .link-text {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPFeature .icon {
+  font-size: 24px;
+}
+
+
+/* ========================================================================
+   DOC CONTENT
+   ======================================================================== */
+
+.VPDoc {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+}
+
+.VPDoc p,
+.VPDoc li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+
+.VPDoc strong {
+  color: var(--vp-c-text-1);
+}
+
+.VPDoc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.VPDoc a:hover {
+  text-decoration: underline;
+}
+
+
+/* ========================================================================
+   CODE BLOCKS - TERMINAL STYLE
+   ======================================================================== */
+
+.vp-code-group,
+div[class*="language-"] {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+div[class*="language-"]::before {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--vp-c-brand-1);
+}
+
+.vp-code {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 12px !important;
+}
+
+code {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 0 !important;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
+/* ========================================================================
+   CUSTOM CONTAINERS - TERMINAL CALLOUTS
+   ======================================================================== */
+
+.custom-block {
+  border-radius: 0 !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  border-left: 3px solid !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-block.tip {
+  border-left-color: var(--vp-c-brand-1) !important;
+}
+
+.custom-block.warning {
+  border-left-color: #ffb347 !important;
+}
+
+.custom-block.danger {
+  border-left-color: #dc3545 !important;
+}
+
+.custom-block.info {
+  border-left-color: #58dbff !important;
+}
+
+.custom-block .custom-block-title {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.custom-block .custom-block-title::before {
+  content: "> ";
+  opacity: 0.5;
+}
+
+
+/* ========================================================================
+   TABLES
+   ======================================================================== */
+
+.VPDoc table {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+
+.VPDoc th {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+}
+
+.VPDoc td {
+  border: 1px solid var(--vp-c-divider) !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+.VPDoc tr:hover td {
+  background: rgba(255, 107, 53, 0.05) !important;
+}
+
+
+/* ========================================================================
+   SEARCH
+   ======================================================================== */
+
+.VPNavBarSearch .DocSearch-Button {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  border-radius: 0 !important;
+}
+
+.VPNavBarSearch .DocSearch-Button:hover {
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+.DocSearch-Button-Placeholder {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* ========================================================================
+   SCROLLBARS
+   ======================================================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/* ========================================================================
+   HOUSE COLOR ACCENTS
+   ======================================================================== */
+
+.house-blu { color: #3b82f6; }
+.house-grn { color: #22c55e; }
+.house-red { color: #ef4444; }
+.house-ylw { color: #eab308; }
+
+.badge-blu {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  padding: 2px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.badge-grn {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  padding: 2px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.badge-red {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 2px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.badge-ylw {
+  background: rgba(234, 179, 8, 0.15);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #eab308;
+  padding: 2px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+
+/* ========================================================================
+   TECHNICAL DEEP DIVE SECTIONS
+   ======================================================================== */
+
+details.technical-deep-dive {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--vp-c-divider);
+  border-left: 3px solid var(--vp-c-brand-1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+details.technical-deep-dive summary {
+  cursor: pointer;
+  font-family: "Courier New", Consolas, Monaco, monospace;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--vp-c-brand-1);
+}
+
+details.technical-deep-dive summary::before {
+  content: "> ";
+  opacity: 0.5;
+}
+
+details.technical-deep-dive summary:hover {
+  color: var(--vp-c-brand-2);
+}
+
+
+/* ========================================================================
+   CUSTOM GAME CONTAINERS
+   ======================================================================== */
+
+.tip-strategy {
+  border-left-color: #22c55e !important;
+  background: rgba(34, 197, 94, 0.08) !important;
+}
+
+.warning-risk {
+  border-left-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+}
+
+
+/* ========================================================================
+   FOOTER
+   ======================================================================== */
+
+.VPFooter {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-top: 1px solid var(--vp-c-divider) !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  font-family: "Courier New", Consolas, Monaco, monospace !important;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* ========================================================================
+   LIGHT MODE OVERRIDES
+   ======================================================================== */
+
+:root:not(.dark) .VPNav {
+  background: rgba(241, 245, 249, 0.95) !important;
+}
+
+:root:not(.dark) .VPSidebar {
+  background: rgba(241, 245, 249, 0.9) !important;
+}
+
+:root:not(.dark) .VPFeature {
+  background: rgba(241, 245, 249, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(100, 116, 139, 0.1);
+}
+
+:root:not(.dark) .VPFeature:hover {
+  background: rgba(14, 116, 144, 0.05) !important;
+  border-color: rgba(14, 116, 144, 0.3) !important;
+}
+
+:root:not(.dark) .custom-block {
+  background: rgba(241, 245, 249, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(100, 116, 139, 0.1);
+}
+
+:root:not(.dark) div[class*="language-"],
+:root:not(.dark) .vp-code-group {
+  background: rgba(241, 245, 249, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(100, 116, 139, 0.1);
+}
+
+:root:not(.dark) code {
+  background: rgba(241, 245, 249, 0.8) !important;
+}
+
+:root:not(.dark) .VPDoc th {
+  background: rgba(241, 245, 249, 0.8) !important;
+  color: #0e7490 !important;
+}
+
+:root:not(.dark) .VPDoc td {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+:root:not(.dark) .VPDoc tr:hover td {
+  background: rgba(14, 116, 144, 0.05) !important;
+}
+
+:root:not(.dark) details.technical-deep-dive {
+  background: rgba(241, 245, 249, 0.8);
+  box-shadow: 0 2px 8px rgba(100, 116, 139, 0.1);
+}
+
+:root:not(.dark) ::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+:root:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}
+
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+:root:not(.dark) .VPFooter {
+  background: rgba(241, 245, 249, 0.95) !important;
+}
