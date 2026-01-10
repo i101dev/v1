@@ -153,7 +153,6 @@ onMounted(() => {
   padding: 0.75rem 1rem;
   font-family: 'Courier New', monospace;
   font-size: 0.875rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
