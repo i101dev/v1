@@ -4,14 +4,17 @@ title: Subscribe
 description: Get notified when Syndicate Protocol launches
 ---
 
-# SUBSCRIBE
+<div class="subscribe-page">
+
+<div class="subscribe-header">
+  <h1>INTEL NETWORK</h1>
+  <p class="tagline">Information is power. Get it first.</p>
+</div>
+
+<div class="subscribe-content">
 
 <div class="subscribe-intro">
-
-Stay informed. Get early access updates, development news, and launch notifications.
-
-**No spam. No selling your data. Just intel.**
-
+Join the network. Receive classified briefings on development progress, early access opportunities, and launch intel.
 </div>
 
 <div class="email-form">
@@ -20,6 +23,25 @@ Stay informed. Get early access updates, development news, and launch notificati
     <button type="submit" id="submit-btn" class="submit-btn">SUBSCRIBE</button>
   </form>
   <p id="form-message" class="message"></p>
+</div>
+
+<div class="benefits">
+  <div class="benefit">
+    <span class="benefit-icon">📡</span>
+    <span class="benefit-text">Development updates & patch notes</span>
+  </div>
+  <div class="benefit">
+    <span class="benefit-icon">🎯</span>
+    <span class="benefit-text">Early access to playtests</span>
+  </div>
+  <div class="benefit">
+    <span class="benefit-icon">🔐</span>
+    <span class="benefit-text">No spam. No selling data. Just intel.</span>
+  </div>
+</div>
+
+</div>
+
 </div>
 
 <script setup>
@@ -73,21 +95,50 @@ onMounted(() => {
 </script>
 
 <style>
-.subscribe-intro {
-  max-width: 500px;
-  margin: 2rem auto;
-  text-align: center;
-  font-family: 'Courier New', monospace;
+.subscribe-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-.subscribe-intro p {
+.subscribe-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subscribe-header h1 {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  color: #ff6b35;
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-header .tagline {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
   color: var(--vp-c-text-2);
-  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.subscribe-content {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  padding: 2rem;
+}
+
+.subscribe-intro {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .email-form {
-  max-width: 500px;
-  margin: 2rem auto;
+  margin-bottom: 2rem;
 }
 
 .form-container {
@@ -104,7 +155,7 @@ onMounted(() => {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: var(--vp-c-bg-soft);
+  background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   color: var(--vp-c-text-1);
   outline: none;
@@ -149,6 +200,7 @@ onMounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   min-height: 1.5rem;
+  text-align: center;
 }
 
 .message.success {
@@ -157,5 +209,30 @@ onMounted(() => {
 
 .message.error {
   color: #f87171;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1.5rem;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+}
+
+.benefit-icon {
+  font-size: 1.25rem;
+}
+
+.benefit-text {
+  letter-spacing: 0.02em;
 }
 </style>

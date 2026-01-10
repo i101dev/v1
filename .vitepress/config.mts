@@ -23,7 +23,8 @@ export default defineConfig({
       { text: 'Getting Started', link: '/getting-started/' },
       { text: 'Game Systems', link: '/systems/' },
       { text: 'Progression', link: '/progression/' },
-      { text: 'Reference', link: '/reference/' }
+      { text: 'Reference', link: '/reference/' },
+      { text: 'Subscribe', link: '/subscribe' }
     ],
 
     sidebar: {
