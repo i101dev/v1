@@ -167,12 +167,17 @@ body {
    NAVBAR - TERMINAL HEADER
    ======================================================================== */
 
-.VPNav {
+.VPNav,
+.VPNavBar,
+.VPNavBar .wrapper,
+.VPNavBar .container {
   background: rgba(0, 0, 0, 0.3) !important;
   border-bottom: 1px solid var(--vp-c-divider) !important;
 }
 
-.dark .VPNavBar {
+.dark .VPNavBar,
+.dark .VPNavBar .wrapper,
+.dark .VPNavBar .container {
   background: rgba(0, 0, 0, 0.3) !important;
 }
 
