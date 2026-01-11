@@ -167,12 +167,16 @@ body {
    NAVBAR - TERMINAL HEADER
    ======================================================================== */
 
-.VPNav,
+.VPNav {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
 .VPNavBar,
 .VPNavBar .wrapper,
 .VPNavBar .container {
   background: rgba(0, 0, 0, 0.3) !important;
-  border-bottom: 1px solid var(--vp-c-divider) !important;
+  border-bottom: none !important;
 }
 
 .dark .VPNavBar,
@@ -673,8 +677,15 @@ details.technical-deep-dive summary:hover {
    LIGHT MODE OVERRIDES
    ======================================================================== */
 
-:root:not(.dark) .VPNav {
+:root:not(.dark) .VPNav,
+:root:not(.dark) .VPNavBar,
+:root:not(.dark) .VPNavBar .wrapper,
+:root:not(.dark) .VPNavBar .container {
   background: rgba(241, 245, 249, 0.95) !important;
+}
+
+:root:not(.dark) .VPNavBarTitle .title {
+  color: #0e7490 !important;
 }
 
 :root:not(.dark) .VPSidebar {
