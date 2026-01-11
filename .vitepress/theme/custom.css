@@ -144,6 +144,15 @@ body {
   font-family: "Courier New", Consolas, Monaco, monospace !important;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #ffb347;
+}
+
+.VPDoc h1 {
+  color: #ff6b35;
+}
+
+.VPDoc h2 {
+  color: #ff8c5a;
 }
 
 .VPDoc h1::before,
@@ -720,6 +729,23 @@ details.technical-deep-dive summary:hover {
 
 :root:not(.dark) ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
+}
+
+:root:not(.dark) .VPDoc h1,
+:root:not(.dark) .VPDoc h2,
+:root:not(.dark) .VPDoc h3,
+:root:not(.dark) .VPDoc h4,
+:root:not(.dark) .VPDoc h5,
+:root:not(.dark) .VPDoc h6 {
+  color: #b45309;
+}
+
+:root:not(.dark) .VPDoc h1 {
+  color: #c2410c;
+}
+
+:root:not(.dark) .VPDoc h2 {
+  color: #b45309;
 }
 
 :root:not(.dark) .VPFooter {
