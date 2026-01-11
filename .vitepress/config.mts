@@ -138,7 +138,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-repo/syndicate-protocol' }
+      { icon: 'github', link: 'https://github.com/i101dev/v1' }
     ],
 
     search: {
