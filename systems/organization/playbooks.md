@@ -1,77 +1,117 @@
 # Playbooks
 
-Playbooks are automated response systems that trigger actions based on game events. They're used primarily by Protocol Syndicates (AI houses) but can inform strategic understanding.
+Playbooks are **shopping lists of objectives** that appear when AI houses detect important game events. Any entity — human players or AI syndicates — can fill these objectives to earn credit and build relationships.
 
 ## Concept
 
-Playbooks define **if-this-then-that** logic:
+When a trigger event fires, a playbook is created with objectives visible immediately:
 
 ```
-TRIGGER EVENT → EVALUATE CONDITIONS → EXECUTE RESPONSE
+TRIGGER EVENT → PLAYBOOK CREATED → OBJECTIVES OPEN FOR FILL
 ```
 
-When specific game events occur, playbooks automatically queue responses.
+This creates a marketplace where entities compete to fill lucrative objectives.
 
-## How AI Houses Use Playbooks
+## How Playbooks Work
 
-Each house (BLU, GRN, RED, YLW) has playbooks that define their behavior:
+Each house (BLU, GRN, RED, YLW) creates playbooks in response to specific triggers:
 
-### Example Triggers
+| Trigger                 | House | Playbook Contains                        |
+| ----------------------- | ----- | ---------------------------------------- |
+| MINE_PLACEMENT          | BLU   | Intel objectives, resource objectives    |
+| MARKET_DEVIATION (+30%) | GRN   | Resource objectives, attack objectives   |
+| CIVILIAN_DEATH          | RED   | Intel objectives, elimination objectives |
+| ATTACK_CARD             | YLW   | Defense objectives, resource objectives  |
 
-| Trigger | House | Typical Response |
-|---------|-------|------------------|
-| MINE_PLACEMENT | BLU | Gather intel, contract RED for sabotage |
-| MARKET_DEVIATION (+30%) | GRN | Execute arbitrage trades |
-| CIVILIAN_DEATH | RED | Request tribunal kill-warrant |
-| ATTACK_CARD | YLW | Contract RED for defense |
+## Filling Objectives
 
-## Understanding House Behavior
+See an objective you can complete? Hit the **Fill** button.
 
-Learning the trigger-response patterns lets you:
+### Fill Process
 
-### Predict Actions
-- BLU responds to resource opportunities with intel gathering
-- GRN exploits market volatility
-- RED punishes aggressors
-- YLW contracts for protection
+1. Click **[Fill]** on any objective you can complete
+2. System verifies you have the requirements
+3. If verified: execution is immediate and atomic
+4. You receive **credit** AND **respect** with that house
 
-### Manipulate Responses
-- Trigger BLU intel gathering, then ambush scouts
-- Create market deviation to trigger GRN arbitrage
-- Frame enemies to trigger RED retaliation
-- Exploit YLW's defensive contracts
+### Objective Types
 
-## Contract System
+| Type               | What You Provide                  | Requirements                     |
+| ------------------ | --------------------------------- | -------------------------------- |
+| **Provisions**     | Resources (ENGY, MINR, WATR)      | Must have resources in inventory |
+| **Items**          | Crafted items (CHEM, ELEC, etc.)  | Must have items in inventory     |
+| **Cards**          | Execute a specific card on target | Must have card available         |
+| **Investigations** | Intel gathering                   | Must allocate INTL citizens      |
 
-Playbooks often generate **contracts** between houses:
+### First Come, First Served
 
-| Contract Type | Purpose |
-|---------------|---------|
-| Kill-warrant | Bounty on identified aggressor |
-| Defense | Protection agreement |
-| Sabotage | Attack enemy infrastructure |
-| Intelligence | Information gathering |
+Objectives are competitive. When an objective is filled, it's gone. Position yourself to capture high-value objectives before competitors.
 
-### RED Contracts Create Inflation
-When RED issues kill-warrants, they pay out CRD from Imperial reserves. This creates a **second CRD supply source** (beyond population growth), causing regional inflation.
+## Respect System
+
+Filling objectives earns **respect** with the issuing house. Respect is house-specific — helping BLU builds respect with BLU, not with RED.
+
+### Respect Thresholds
+
+| Threshold    | Value | Effect                                  |
+| ------------ | ----- | --------------------------------------- |
+| Neutral      | 0     | Default state                           |
+| Known        | 100   | House acknowledges you                  |
+| Trusted      | 500   | Access to private objectives            |
+| Ally         | 1000  | Significant relationship benefits       |
+| Inner Circle | 2500  | Maximum benefits, strategic partnership |
+
+### Respect Unlocks by House
+
+| House   | High Respect Gets You                             |
+| ------- | ------------------------------------------------- |
+| **BLU** | Trade partnerships, resource intel, market access |
+| **GRN** | Raid immunity, joint operations, target intel     |
+| **RED** | Defense priority, protection, reduced scrutiny    |
+| **YLW** | Premium pricing, FOREX access, arbitrage intel    |
+
+## CRD Expansion
+
+When RED issues elimination or defense objectives, the payment **creates new CRD** rather than transferring existing currency. This is a second money supply source (beyond population growth), causing regional inflation.
+
+Strategic implication: More RED objectives = more inflation = adjust your pricing.
 
 ## Strategic Implications
 
-### Exploit Predictability
-AI houses follow programmed patterns. Once you understand triggers:
-- Avoid triggering unfavorable responses
-- Deliberately trigger favorable responses
-- Manipulate inter-house conflicts
+### Objective Racing
+
+High-value objectives go fast. Strategies for capturing them:
+
+-   Maintain inventory of common objective requirements
+-   Monitor triggers to predict incoming playbooks
+-   Position near likely objective targets
+-   Specialize in objective types others can't fill
+
+### Respect Farming
+
+Build relationships strategically:
+
+-   Focus on one or two houses for deep benefits
+-   Or spread across all houses for balanced access
+-   High respect with RED = protection from scrutiny
+-   High respect with GRN = raid immunity
+
+### Trigger Manipulation
+
+You can deliberately cause triggers to create playbooks:
+
+-   Build a MINE to trigger BLU's response
+-   Attack civilians to trigger RED (and profit from elimination objectives)
+-   Cause market swings to trigger GRN arbitrage playbooks
+-   Play attack cards to trigger YLW defensive playbooks
 
 ### False Flags
-- Attack civilian assets to trigger RED against your enemy
-- Create evidence pointing to rivals
-- Let AI houses do your dirty work
 
-### Arbitrage Opportunities
-- GRN's market responses create predictable trades
-- Position ahead of expected arbitrage
-- Profit from house-driven volatility
+Let AI houses do your dirty work:
+
+-   Frame enemies for civilian attacks → RED eliminates them
+-   Create evidence pointing to rivals
+-   Profit from the chaos you create
 
 ---
 
@@ -81,25 +121,42 @@ AI houses follow programmed patterns. Once you understand triggers:
 ### Playbook Architecture
 
 Playbooks consist of:
-- **Triggers:** Event types that activate the playbook
-- **Conditions:** Requirements that must be met
-- **Actions:** Responses to execute when triggered
 
-### State Machine
+-   **Trigger:** Event type that creates the playbook
+-   **Objectives:** Array of fillable objectives (visible immediately)
+-   **Status:** ACTIVE (has unfilled objectives) or COMPLETED
+
+### Objective Structure
 
 ```
-IDLE → TRIGGERED → EVALUATING → EXECUTING → COMPLETE
-                       ↓
-                   ABORTED (conditions not met)
+{
+    type: PROVISIONS | ITEMS | CARDS | INVESTIGATIONS
+    requirements: { resource_type, amount, item_type, etc. }
+    credit_reward: number
+    respect_reward: number
+    is_crd_expansion: boolean
+    status: OPEN | FILLED | EXPIRED
+}
 ```
+
+### Fill Verification
+
+The fill process is atomic:
+
+1. Check objective status is OPEN
+2. Verify entity has required resources/items/card
+3. For investigations, verify INTL citizens available
+4. Execute in single transaction (no partial fills)
+5. Award credit and respect
 
 ### Backend Implementation
 
-| Mechanic | Backend Location | Description |
-|----------|-----------------|-------------|
-| Playbook model | `protocol_syndicates/` | Trigger definitions, conditions |
-| Trigger evaluation | `protocol_syndicates/` | Condition checking |
-| Action execution | `protocol_syndicates/` | Response queuing |
+| Mechanic          | Backend Location    | Description                        |
+| ----------------- | ------------------- | ---------------------------------- |
+| Playbook creation | `S_playbook.ts`     | Trigger → Objective generation     |
+| Objective model   | `M_ps_objective.ts` | Objective state and fill tracking  |
+| Fill service      | `S_objective.ts`    | Verification and execution         |
+| Respect tracking  | `S_respect.ts`      | House-specific relationship values |
 
 </details>
 
