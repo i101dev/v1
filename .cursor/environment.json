@@ -1,0 +1,11 @@
+{
+  "name": "Syndicate Protocol Wiki",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "docs-dev-server",
+      "command": "npm run dev -- --host 0.0.0.0 --port 5173"
+    }
+  ],
+  "ports": [5173]
+}
